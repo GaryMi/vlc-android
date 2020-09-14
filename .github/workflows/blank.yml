@@ -21,8 +21,9 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      wget https://dl.google.com/android/repository/android-ndk-r21d-linux-x86_64.zip ./
-      unzip ./android-ndk-r21d-linux-x86_64.zip
+      makedir ~/android_ndk/
+      wget -p ~/android_ndk/ https://dl.google.com/android/repository/android-ndk-r21d-linux-x86_64.zip ./
+      unzip -help
       export ANDROID_NDK=./android-ndk-r21d-linux-x86_64
       # Runs a single command using the runners shell
       - name: Run a one-line script
